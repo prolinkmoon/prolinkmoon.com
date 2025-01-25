@@ -16,49 +16,41 @@ new DataTable('#example');
 
 // Link URL TASK function
 function updateActionLinks() {
-    const rows = document.querySelectorAll('table tbody tr'); // Ensure you're selecting all the rows
-    
-    rows.forEach(row => {
-      const actionCell = row.cells[4]; // Get the "Action" column (index 4)
-      const link = actionCell.textContent.trim();
+  const rows = document.querySelectorAll('table tbody tr'); // Ensure you're selecting all the rows
   
-      // Check if the cell contains a valid URL
-      if (link && isValidURL(link)) {
-        const anchor = document.createElement('a');
-        anchor.classList.add('links');
-        anchor.href = link;
-        anchor.target = '_blank'; // Opens the link in a new tab
-        anchor.innerHTML = 'Links <i class="bx bx-link-external"></i>';
-  
-        // Replace the content of the "Action" cell with the anchor tag
-        actionCell.innerHTML = ''; // Clear the existing content
-        actionCell.appendChild(anchor); // Append the anchor tag
-      }
-    });
-  }
-  
-  // Helper function to check if a string is a valid URL
-// Helper function to check if a string is a valid URL
-  function isValidURL(str) {
-    const pattern = new RegExp('^(https?://)?([a-zA-Z0-9-]+\\.)+[a-zA-Z0-9]{2,}(\\/[\\w-]+)*\\/?$');
-    return pattern.test(str);
-  }
+  rows.forEach(row => {
+    const actionCell = row.cells[4]; // Get the "Action" column (index 4)
+    const link = actionCell.textContent.trim();
 
+    // Check if the cell contains a valid URL
+    if (link && isValidURL(link)) {
+      const anchor = document.createElement('a');
+      anchor.classList.add('links');
+      anchor.href = link;
+      anchor.target = '_blank'; // Opens the link in a new tab
+      anchor.innerHTML = 'Links <i class="bx bx-link-external"></i>';
 
-  
-  // Initial run to apply the links
-  updateActionLinks();
-  
-  // If you're using a dropdown to load more rows, call the function again after the rows are added
-  document.querySelector('#dt-length-0').addEventListener('click', () => {
-    // Load additional rows here, then call updateActionLinks again
-    updateActionLinks();
+      // Replace the content of the "Action" cell with the anchor tag
+      actionCell.innerHTML = ''; // Clear the existing content
+      actionCell.appendChild(anchor); // Append the anchor tag
+    }
   });
-  
+}
 
+// Helper function to check if a string is a valid URL
+function isValidURL(str) {
+  const pattern = new RegExp('^(https?://)?([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}(/[^\\s]*)?$');
+  return pattern.test(str);
+}
 
+// Initial run to apply the links
+updateActionLinks();
 
-
+// If you're using a dropdown to load more rows, call the function again after the rows are added
+document.querySelector('#dt-length-0').addEventListener('click', () => {
+// Load additional rows here, then call updateActionLinks again
+updateActionLinks();
+});
 
 
 
