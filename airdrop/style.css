@@ -1,0 +1,275 @@
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Euclid Circular A', sans-serif;
+}
+
+
+.ads {
+    width: 100%;
+    height: 20px;
+    background-color: #000000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-ads {
+    justify-content: center;
+    justify-items: center;
+    color: #ffffffde;
+}
+
+.ads-text {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+
+
+.navbar {
+    width: 100%;
+    height: 6vh;
+    background-color: #141618;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
+
+footer a {
+    color: white;
+}
+
+footer h3 {
+    color: white;
+}
+
+footer p {
+    color: white;
+}
+
+
+
+
+td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+
+
+
+td:nth-child(2) {
+    font-weight: bold;
+}
+
+
+td:nth-child(5) {
+    max-width: 100px; /* Set a maximum width for the Action column */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+td a.links {
+    display: block; /* Make the anchor tag a block element to control width */
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+th:nth-child(6) {
+    display: flex;           
+    justify-content: center;  
+    align-items: center;
+}
+
+td:nth-child(6) {
+    min-width: 200px;
+    min-height: max-content;
+    max-width: 800px; /* Set a maximum width for the Action column */
+    padding: 2px;
+    /* text-overflow: ellipsis; */
+    /* overflow: hidden; */
+    /* white-space: nowrap;  */
+    
+  }
+td div.container-info {
+    /* Make the anchor tag a block element to control width */
+    /* width: 100%; */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;           
+    justify-content: center;  
+    align-items: center;
+    
+}
+
+.container-info {
+    display: flex;
+    gap: 10px;
+}
+.website-s {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffffe7;
+    background-color: #000000;
+    border: 1px solid #000000de;
+    border-radius: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 60px;
+    max-height: 60px;
+    display: flex;           
+    justify-content: center;  
+    align-items: center;      
+}
+
+.twitter-s {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffffe7;
+    background-color: #1DA1F2;
+    border: none;
+    border-radius: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 60px;
+    max-height: 60px;
+    display: flex;           
+    justify-content: center;  
+    align-items: center; 
+}
+
+a.telegram-s {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffffe7;
+    background-color: #63b5e3;
+    border: none;
+    border-radius: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 60px;
+    max-height: 60px;
+    display: flex;           
+    justify-content: center;  
+    align-items: center; 
+}
+
+a.discord-s {
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffffe7;
+    background-color: #7289d9;
+    border: none;
+    border-radius: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 60px;
+    max-height: 60px;
+    display: flex;           
+    justify-content: center;  
+    align-items: center; 
+}
+
+
+
+
+
+
+/* FOOTER */
+
+.bg-footer {
+    background-color: #000000;
+    width: 100%;
+    height: max-content;
+}
+
+.wrap-footer {
+    padding-top: 22px;
+    position: relative;
+    width: 80%;
+    height: 220px;
+    margin: auto;
+    border-bottom: 1px solid #3f3f3f;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    opacity: 0.2;
+    position: absolute;
+}
+
+.wrap-footer-content {
+    padding-left: 200px;
+    display: inline-flex;
+}
+.link h3 {
+    margin-bottom: 4px;
+}
+.link a {
+    margin-top: 20px;
+    text-decoration: none;
+    opacity: 0.5;
+    line-height: 22px;
+}
+
+.contact-footer {
+    margin-left: 62px;
+    line-height: 22px;
+}
+.contact-footer h3 {
+    margin-bottom: 4px;
+}
+.contact-footer a, .contact-footer p {
+    opacity: 0.5;
+}
+
+.footer-social {
+    position: absolute;
+    right: 10px;
+    bottom: 0%;
+}
+.footer-social i {
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+
+.more-footer {
+    width: 80%;
+    height: 52px;
+    margin: auto;
+    position: relative;
+}
+.more-footer h1 {
+    opacity: 0.6;
+}
+.more-footer p {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    font-size: 12px;
+}
+
+
+@media (max-width: 520px) {
+    h1.text-white {
+        padding-left: 14px;
+        padding-bottom: 20px;
+    }
+}
