@@ -39,9 +39,10 @@ function updateActionLinks() {
   
   // Helper function to check if a string is a valid URL
   function isValidURL(str) {
-    const pattern = new RegExp('^(https?://)?([a-zA-Z0-9-]+\\.)+[a-zA-Z0-9]{2,3}(/[^\\s]*)?$');
+    const pattern = new RegExp('^(https?:\\/\\/)?([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}(:\\d+)?(\\/[^\\s]*)?$');
     return pattern.test(str);
   }
+
   
   // Initial run to apply the links
   updateActionLinks();

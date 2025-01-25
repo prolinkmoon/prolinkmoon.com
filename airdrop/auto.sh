@@ -14,13 +14,11 @@ rm index.html
 
 mv new_index.html index.html
 
-cp index.html temp/
+cp index.html temp/"$(date +'%Y-%m-%d_%H-%M-%S')_index.html"
 
-mv temp/index.html temp/date-today.html
+rm /var/www/prolinkmoon.com/airdrop/index.html
 
-rm /var/www/prolinkmoon/airdrop/index.html
-
-cp index.html /var/www/prolinkmoon/airdrop/
+cp index.html /var/www/prolinkmoon.com/airdrop/
 
 sudo systemctl restart nginx
 
