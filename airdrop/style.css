@@ -16,7 +16,7 @@
     background-color: #000000;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 101;
     align-items: center;
     cursor: pointer;
 }
@@ -267,9 +267,22 @@ a.discord-s {
 }
 
 
+label {
+    color: #000000;
+}
+
+.container-iframe {
+    height: max-content;
+}
+
+
 @media (max-width: 520px) {
     h1.text-white {
         padding-left: 14px;
         padding-bottom: 20px;
+    }
+
+    .iframe {
+        height: 1200px;
     }
 }
