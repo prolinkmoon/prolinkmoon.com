@@ -16,40 +16,60 @@ new DataTable('#example');
 
 // Link URL TASK function
 function updateActionLinks() {
-  const rows = document.querySelectorAll('table tbody tr'); // Ensure you're selecting all the rows
-  
+  const rows = document.querySelectorAll('table tbody tr'); // Select all rows in the table body
+
   rows.forEach(row => {
-    const actionCell = row.cells[4]; // Get the "Action" column (index 4)
-    const link = actionCell.textContent.trim();
+    const cells = row.cells; // Get all cells in the current row
 
-    // Check if the cell contains a valid URL
-    if (link && isValidURL(link)) {
-      const anchor = document.createElement('a');
-      anchor.classList.add('links');
-      anchor.href = link;
-      anchor.target = '_blank'; // Opens the link in a new tab
-      anchor.innerHTML = 'Links <i class="bx bx-link-external"></i>';
+    // Loop through each cell in the row
+    Array.from(cells).forEach(cell => {
+      const text = cell.textContent.trim(); // Get the text content of the cell
 
-      // Replace the content of the "Action" cell with the anchor tag
-      actionCell.innerHTML = ''; // Clear the existing content
-      actionCell.appendChild(anchor); // Append the anchor tag
-    }
+      // Check if the cell contains a valid URL
+      if (isValidURL(text)) {
+        const anchor = document.createElement('a');
+        anchor.classList.add('links');
+        anchor.href = text;
+        anchor.target = '_blank'; // Open the link in a new tab
+        anchor.innerHTML = 'Links <i class="bx bx-link-external"></i>';
+
+        // Replace the content of the cell with the anchor tag
+        cell.innerHTML = ''; // Clear the existing content
+        cell.appendChild(anchor); // Append the anchor tag
+      }
+    });
   });
 }
 
 // Helper function to check if a string is a valid URL
 function isValidURL(str) {
-  const pattern = new RegExp('^(https?://)?([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}(/[^\\s]*)?$');
-  return pattern.test(str);
+  try {
+    new URL(str); // Use the URL constructor for validation
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 // Initial run to apply the links
 updateActionLinks();
 
-// If you're using a dropdown to load more rows, call the function again after the rows are added
-document.querySelector('#dt-length-0').addEventListener('click', () => {
-// Load additional rows here, then call updateActionLinks again
-updateActionLinks();
+// If you're dynamically loading more rows, call the function again after the rows are added
+document.addEventListener('DOMContentLoaded', () => {
+  // Example: Listen for changes in the table (e.g., after loading more rows)
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        updateActionLinks(); // Re-run the function if new rows are added
+      }
+    });
+  });
+
+  // Observe the table body for changes
+  const tableBody = document.querySelector('table tbody');
+  if (tableBody) {
+    observer.observe(tableBody, { childList: true });
+  }
 });
 
 
