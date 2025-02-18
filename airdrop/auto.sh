@@ -1,10 +1,13 @@
 cd /root/prolinkmoon
 
 #create python ENV
-#virtualenv -p python3 envname
+# python3 -m venv venv
 
 #enter to python ENV
-source ./bin/activate
+#source ./bin/activate
+
+#enter to python ENV
+source venv/bin/activate
 
 python3 script.py
 

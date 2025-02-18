@@ -14,17 +14,14 @@
     color: white;
 }
 
+button a {
+    color: #ffffff;
+}
 
-nav {
-    position: absolute;
-    width: max-content;
-    display: inline-flex;
+.link a {
+    color: #ffffff;
 }
-.navbar img {
-    width: 72px;
-    margin-left: 80px;
-    margin-top: 20px;
-}
+
 .about-us {
     margin-top: 44px;
     margin-left: 20px;
@@ -376,9 +373,7 @@ nav {
     }
 }
 @media (max-width: 760px) {
-    .navbar img {
-        margin-left: 20px;
-    }
+
     .block {
         width: 100%;
         object-fit: contain
@@ -435,9 +430,7 @@ nav {
 
 /* MOBILE  */
 @media (max-width: 520px) {
-    .navbar img {
-        width: 54px;
-    }
+
     .about-us {
         margin-top: 40px;
     }

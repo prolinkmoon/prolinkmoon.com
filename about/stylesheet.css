@@ -16,6 +16,10 @@
     background-color: #0d0e11;
 }
 
+button a {
+    color: #ffffff;
+}
+
 .bg-hero {
     width: 100%;
     height: max-content;
