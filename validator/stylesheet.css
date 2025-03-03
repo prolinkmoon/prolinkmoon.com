@@ -297,7 +297,7 @@ nav {
     display: flex;
     gap: 8px;
 }
-.active {
+.active-ok {
     background-color: #6EC531;
     margin-top: 6px;
     width: 8px;
@@ -589,6 +589,13 @@ nav {
 
 
 
+.wrap-main p {
+    margin: 0px;
+}
+
+.wrap-footer a {
+    color: #ffffff;
+}
 
 
 
@@ -699,6 +706,12 @@ nav {
     .wrap-hero .hero-p {
         width: auto;
     }
+    .img-app {
+        max-width: 400px;
+    }
+    .project {
+        max-width: 220px;
+    }
 }
 @media (max-width: 520px){
     .more-footer p {
@@ -713,6 +726,12 @@ nav {
     }
     .more-footer {
         height: 120px;
+    }
+    .project {
+        max-width: 180px;
+    }
+    .primary {
+        max-width: 200px;
     }
 }
 
@@ -767,6 +786,9 @@ nav {
     .hub p {
         font-size: 20px;
     }
+    .project {
+        max-width: 200px;
+    }
 
 
 
@@ -808,6 +830,15 @@ nav {
     }
     .wrap-main {
         width: 95%;
+    }
+}
+
+@media (max-width: 350px){
+    .project {
+        max-width: 200px;
+    }
+    .img-app {
+        width: 300px;
     }
 }
 
@@ -932,4 +963,17 @@ a:link {
 
 #seconds {
     color: #a1a1a1;
+}
+
+.btn-stake-now a {
+    color: #ffffff;
+}
+
+
+
+
+#node-depin {
+    width: 100%;
+    height: max-content;
+    background-color: #181920;
 }

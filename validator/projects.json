@@ -1,0 +1,48 @@
+{
+    "projects": [
+      {
+        "name": "Celestia",
+        "image": "assets/img-project/celestia.png",
+        "status": "active-status",
+        "services": [
+          { "type": "Mainnet", "class": "cl-mn" },
+          { "type": "Validator", "class": "cl-vl" },
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": "showPopupCelestia"
+      },
+      {
+        "name": "Cosmos",
+        "image": "assets/img-project/cosmos.png",
+        "status": "active-status",
+        "services": [
+          { "type": "Mainnet", "class": "cl-mn" },
+          { "type": "Validator", "class": "cl-vl" },
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": "showPopupCosmos"
+      },
+      {
+        "name": "Neutron",
+        "image": "assets/img-project/neutron.jpeg",
+        "status": "active-status",
+        "services": [
+          { "type": "Mainnet", "class": "cl-mn" },
+          { "type": "Validator", "class": "cl-vl" },
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": "showPopupNeutron"
+      },
+      {
+        "name": "Zeta",
+        "image": "https://s3.coinmarketcap.com/static-gravity/image/901279d4611c458098fccee1c6076e36.png",
+        "status": "not-active-status",
+        "services": [
+          { "type": "Testnet", "class": "cl-ts" },
+          { "type": "Validator", "class": "cl-vl" },
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": "showPopupNeutron"
+      }
+    ]
+  }  

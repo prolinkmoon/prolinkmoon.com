@@ -16,10 +16,37 @@
     <link rel="mask-icon" href="fav_icon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <title>Prolinkmoon</title>
+
+    <!-- bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+    <title>Prolinkmoon - Validator </title>
 </head>
 <body>
-    <nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+            <div class="navbar-nav gap-3">
+              <a class="nav-link" aria-current="page" href="../">🏠Home</a>
+              <a class="nav-link" href="../airdrop/">🪂Airdrop</a>
+              <a class="nav-link  active" href="../validator/#lfg">⚡Validator node</a>
+              <a class="nav-link" href="#">🤝Ambassador</a>
+              <a class="nav-link" href="../about/">About</a>
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Other > </a>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+
+    <!-- <nav>
         <div class="bg-nav">
             <div class="wrap-nav">
                 <div class="wrap-back">
@@ -33,7 +60,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <section id="hero">
         <div class="bg-hero">
             <div class="wrap-hero">
@@ -107,9 +134,9 @@
     <section id="lfg">
         <div class="bg-main">
             <div class="wrap-main">
-                <h1>Ongoing 🔄</h1>
+                <h3>Ongoing 🔄</h3>
                 <div class="active-wrap">
-                    <span class="active"></span>
+                    <span class="active-ok"></span>
                     <p>Active</p>
                 </div>
                 <div class="mt-wrap">
@@ -121,144 +148,18 @@
                     <p>Not active / not started ⚙️</p>
                 </div>
                 <div class="display-main">
-                    <div class="wrap_">
-                    <!-- LIST OF PROJECT -->
-                    <!-- celestia -->
-                    <div class="project">
-                        <div class="name-project">
-                            <div class="wrap-nm-pr">
-                                <img src="assets/img-project/celestia.png" alt="">
-                                <h1>Celestia</h1>
-                            </div>
-                            <!-- STATUS -->
-                            <div class="active-wr">
-                                <div class="active-status"></div><!-- use classname "active-status" "mt-status" "not-active-status" -->
-                            </div>    
-                        </div>
-                        <!-- SELECT YOUR SERVICE -->
-                        <div class="list-on-run">
-                            <!-- NETWORK TYPE -->
-                            <!-- MAINNET -->
-                            <div class="mainnet">
-                                <div class="cl-mn"></div>
-                                <p>Mainnet</p>
-                            </div>
-                            <!-- TESTNET -->
-                            <!-- <div class="testnet">
-                                <div class="cl-ts"></div>
-                                <p>Testnet</p>
-                            </div> -->
-                            <!-- VALIDATOR -->
-                            <div class="validator">
-                                <div class="cl-vl"></div>
-                                <p>Validator</p>
-                            </div>
-                            <!-- NODE / FULLNODE -->
-                            <div class="node">
-                                <div class="cl-nd"></div>
-                                <p>Node</p>
-                            </div>
-                        </div>
-                        <div class="wrap-btn-main">
-                            <button class="delegate" onclick="showPopupCelestia()"><a>Details</a></button>
-                            <button class="guide"><a href="https://docs.prolinkmoon.com/list/avail/light-node.html" target="_blank">Guide</a></button>
-                        </div>
-                    </div>
-
-                    <!-- cosmos -->
-                    <div class="project">
-                        <div class="name-project">
-                            <div class="wrap-nm-pr">
-                                <img src="assets/img-project/cosmos.png" alt="">
-                                <h1>Cosmos</h1>
-                            </div>
-                            <!-- STATUS -->
-                            <div class="active-wr">
-                                <div class="active-status"></div><!-- use classname "active-status" "mt-status" "not-active-status" -->
-                            </div>    
-                        </div>
-                        <!-- SELECT YOUR SERVICE -->
-                        <div class="list-on-run">
-                            <!-- NETWORK TYPE -->
-                            <!-- MAINNET -->
-                            <div class="mainnet">
-                                <div class="cl-mn"></div>
-                                <p>Mainnet</p>
-                            </div>
-                            <!-- TESTNET -->
-                            <!-- <div class="testnet">
-                                <div class="cl-ts"></div>
-                                <p>Testnet</p>
-                            </div> -->
-                            <!-- VALIDATOR -->
-                            <div class="validator">
-                                <div class="cl-vl"></div>
-                                <p>Validator</p>
-                            </div>
-                            <!-- NODE / FULLNODE -->
-                            <div class="node">
-                                <div class="cl-nd"></div>
-                                <p>Node</p>
-                            </div>
-                        </div>
-                        <div class="wrap-btn-main">
-                            <button class="delegate" onclick="showPopupCosmos()"><a>Details</a></button>
-                            <button class="guide"><a href="https://docs.prolinkmoon.com/list/avail/light-node.html" target="_blank">Guide</a></button>
-                        </div>
-                    </div>
-
-                    <!-- neutron -->
-                    <div class="project">
-                        <div class="name-project">
-                            <div class="wrap-nm-pr">
-                                <img src="assets/img-project/neutron.jpeg" alt="">
-                                <h1>Neutron</h1>
-                            </div>
-                            <!-- STATUS -->
-                            <div class="active-wr">
-                                <div class="active-status"></div><!-- use classname "active-status" "mt-status" "not-active-status" -->
-                            </div>    
-                        </div>
-                        <!-- SELECT YOUR SERVICE -->
-                        <div class="list-on-run">
-                            <!-- NETWORK TYPE -->
-                            <!-- MAINNET -->
-                            <div class="mainnet">
-                                <div class="cl-mn"></div>
-                                <p>Mainnet</p>
-                            </div>
-                            <!-- TESTNET -->
-                            <!-- <div class="testnet">
-                                <div class="cl-ts"></div>
-                                <p>Testnet</p>
-                            </div> -->
-                            <!-- VALIDATOR -->
-                            <div class="validator">
-                                <div class="cl-vl"></div>
-                                <p>Validator</p>
-                            </div>
-                            <!-- NODE / FULLNODE -->
-                            <div class="node">
-                                <div class="cl-nd"></div>
-                                <p>Node</p>
-                            </div>
-                        </div>
-                        <div class="wrap-btn-main">
-                            <button class="delegate" onclick="showPopupNeutron()"><a>Details</a></button>
-                            <button class="guide"><a href="https://docs.prolinkmoon.com/list/avail/light-node.html" target="_blank">Guide</a></button>
-                        </div>
-                    </div>                   
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    <div class="wrap_" id="project-list">
+                        <!-- Projects will be inserted here -->
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="node-depin">
+        <div class="wrap-main">
+            <h3 style="margin: 0px; padding: 0px;">Depin / Node extension</h3>
+            <p style="opacity: 60%;" class="pb-5">Coming soon ..</p>
         </div>
 
     </section>
@@ -293,10 +194,11 @@
             </div>
             <div class="more-footer">
                 <h1>LET'S BUILD TOGETHER  ■</h1>
-                <p><i class='bx bx-copyright'></i>Copyright 2024, All Rights Reserved by Prolinkmoon</p>
+                <p><i class='bx bx-copyright'></i>Copyright 2025, All Rights Reserved by Prolinkmoon</p>
             </div>
         </div>
     </footer>
     <script src="main.js"></script>
+    <script src="data.js"></script>
 </body>
 </html>
