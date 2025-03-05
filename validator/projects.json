@@ -34,15 +34,59 @@
         "popupFunction": "showPopupNeutron"
       },
       {
-        "name": "Zeta",
-        "image": "https://s3.coinmarketcap.com/static-gravity/image/901279d4611c458098fccee1c6076e36.png",
+        "name": "Nexus CLI",
+        "image": "https://pbs.twimg.com/profile_images/1887351274955546627/jlvN83vR_400x400.jpg",
+        "status": "not-active-status",
+        "services": [
+          { "type": "Testnet", "class": "cl-ts" },
+          
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": ""
+      },
+      {
+        "name": "Unichain",
+        "image": "https://pbs.twimg.com/profile_images/1844360745649057798/iwEWAS02_400x400.jpg",
+        "status": "not-active-status",
+        "services": [
+          { "type": "Testnet", "class": "cl-ts" },
+          
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": ""
+      },
+      {
+        "name": "Elixir",
+        "image": "https://pbs.twimg.com/profile_images/1757893275904512000/CeLd6dtD_400x400.jpg",
+        "status": "not-active-status",
+        "services": [
+          { "type": "Testnet", "class": "cl-ts" },
+          
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": ""
+      },
+      {
+        "name": "Bera Chain",
+        "image": "https://cdn.prod.website-files.com/633c67ced5457aa4dec572be/67b845abe842d21521095c26_667ac3022260a22071b3cf37_u_b_f51944d0-b527-11ee-be26-a5e0a0cc15ce.png",
+        "status": "not-active-status",
+        "services": [
+          { "type": "Mainnet", "class": "cl-mn" },
+          { "type": "Validator", "class": "cl-vl" },
+          { "type": "Node", "class": "cl-nd" }
+        ],
+        "popupFunction": ""
+      },
+      {
+        "name": "Bera Chain",
+        "image": "https://cdn.prod.website-files.com/633c67ced5457aa4dec572be/67b845abe842d21521095c26_667ac3022260a22071b3cf37_u_b_f51944d0-b527-11ee-be26-a5e0a0cc15ce.png",
         "status": "not-active-status",
         "services": [
           { "type": "Testnet", "class": "cl-ts" },
           { "type": "Validator", "class": "cl-vl" },
           { "type": "Node", "class": "cl-nd" }
         ],
-        "popupFunction": "showPopupNeutron"
+        "popupFunction": ""
       }
     ]
   }  
