@@ -32,13 +32,13 @@
   }
 
 .card-p-small {
-    @apply text-xs md:text-sm lg:text-sm xl:text-xl;
+    @apply text-base md:text-lg lg:text-lg xl:text-xl;
   }
 .card-p-big {
-    @apply text-sm md:text-xl;
+    @apply text-base md:text-xl;
   }
 .card-list {
-    @apply text-sm md:text-xl;
+    @apply text-base md:text-xl;
   }
 
 .card-btn {

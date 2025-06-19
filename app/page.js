@@ -36,7 +36,7 @@ export default function Home() {
 
         <div className="relative w-screen h-max bg-neutral-900 text-gray-100">
           <div className="max-w-7xl mx-auto py-18 px-3">
-          <h1 className="text-gray-100 text-2xl font-bold mb-7 max-w-5xl mx-auto">What I do ?</h1>
+          <h1 className="text-gray-100 text-2xl font-bold mb-7 max-w-5xl mx-auto">What I do?</h1>
             <div id="card-1" className="p-4 max-w-5xl mx-auto h-max rounded-xl border border-white/10 bg-gradient-to-bl from-neutral-900 via-zinc-800 to-neutral-900">
                     <img
                     src="/network.png"
@@ -66,7 +66,7 @@ export default function Home() {
                   />
               <h2 className="text-gray-100 card-h1 font-bold mt-5">Community Tools</h2>
               <p className="text-gray-100 card-p-small font-light">Practical tools that improve efficiency and experience.</p>
-              <p className="text-gray-400 font-normal card-p-big mt-3">I design and ship open-source tools tailored to the needs of node operators, airdrop participants, and crypto-native users.</p>
+              <p className="text-gray-400 font-normal card-p-big mt-3">I design and ship open-source tools tailored to the needs of node operators, airdrop participants, and web3 builder.</p>
               <ul className="list-disc card-list ml-5 mt-2.5 mb-6 text-gray-400">
               <li>Prolinkmoon Playground - CLI installer tools for Cosmos-based chains</li>
               <li>A simple and effective starter pack for becoming a node operator </li>

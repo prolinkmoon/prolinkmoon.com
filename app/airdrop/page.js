@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import 'boxicons/css/boxicons.min.css';
@@ -7,21 +8,21 @@ import Cta from '../cta';
 import Footer from '../Footer';
 
 export default function PublicTable() {
-  const [projects, setProjects] = useState([])
-  const [search, setSearch] = useState('')
+  const [projects, setProjects] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const { data } = await supabase.from('projects').select('*').order('id')
-      setProjects(data || [])
-    }
-    fetchProjects()
-  }, [])
+      const { data } = await supabase.from('projects').select('*').order('id');
+      setProjects(data || []);
+    };
+    fetchProjects();
+  }, []);
 
   const filtered = projects.filter((item) =>
     item.project.toLowerCase().includes(search.toLowerCase()) ||
     item.category.toLowerCase().includes(search.toLowerCase())
-  )
+  );
 
   return (
     <div className="absolute inset-0 -z-10 h-max w-full bg-gradient-to-b from-neutral-950 via-zinc-700 to-neutral-900">
@@ -37,7 +38,7 @@ export default function PublicTable() {
             <div className="inline-flex h-full w-full cursor-pointer justify-center rounded-full  px-3 py-1 text-xs font-medium leading-5  backdrop-blur-xl bg-black text-slate-200">
               Node & Validator ⚡️
               <span className="inline-flex items-center pl-2 text-white">
-                by Prolinkmoon 🡢{' '}
+                by Prolinkmoon 🡢
               </span>
             </div>
           </span>
@@ -54,13 +55,10 @@ export default function PublicTable() {
           and take action instantly.
         </p>
 
-        <Cta/>
+        <Cta />
       </div>
 
-
-
-
-      <div className="px-4 pb-18 max-w-6xl mx-auto ">
+      <div className="px-4 pb-18 max-w-6xl mx-auto">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-200">Alpha Today! 🔥</h1>
 
         <div className="mb-4 text-gray-300">
@@ -74,49 +72,47 @@ export default function PublicTable() {
         </div>
 
         <div className="w-full overflow-x-auto rounded-lg border border-gray-200/60">
-          <table className="min-w-full bg-white/50 text-xs sm:text-sm">
-            <thead className="bg-neutral-800 text-gray-200">
-              <tr>
-                <th className="px-2 py-2 sm:px-3 text-left"></th>
-                <th className="px-2 py-2 sm:px-3 text-left">Projects</th>
-                <th className="px-2 py-2 sm:px-3 text-left">Raised</th>
-                <th className="px-2 py-2 sm:px-3 text-left">Category</th>
-                <th className="px-2 py-2 sm:px-3 text-left">Guide</th>
-              </tr>
-            </thead>
-            <tbody className="text-black">
-              {filtered.map((item) => (
-                <tr key={item.id} className="border-t hover:bg-gray-400">
-                  <td className="px-2 py-1 sm:px-3 sm:py-2">
-                    <img
-                      src={item.logo}
-                      alt={item.project}
-                      className="w-6 h-6 sm:w-8 sm:h-8 rounded-full object-cover"
-                    />
-                  </td>
-                  <td className="px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm font-medium">
-                    {item.project}
-                  </td>
-                  <td className="px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm">
-                    {item.raised}
-                  </td>
-                  <td className="px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm">
-                    {item.category}
-                  </td>
-                  <td className="px-2 py-1 text-xs sm:px-3 sm:py-2 sm:text-sm">
-                    <a
-                      href={item.guide}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-900 hover:underline"
-                    >
-                      View 🡥
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <table className="min-w-full bg-white/40 text-[14px] md:text-[18px] backdrop-blur-md rounded-md">
+  <thead className="bg-neutral-800 text-gray-200">
+    <tr>
+      <th className="sticky left-0 z-10 bg-neutral-800 px-3 py-2 text-left">Project</th>
+      <th className="px-3 py-2 text-left whitespace-nowrap">Raised</th>
+      <th className="px-3 py-2 text-left whitespace-nowrap">Category</th>
+      <th className="px-3 py-2 text-left whitespace-nowrap">Guide</th>
+    </tr>
+  </thead>
+  <tbody className="text-black">
+    {filtered.map((item) => (
+      <tr key={item.id} className="border-t border-gray-300/40 hover:bg-gray-400/20">
+        <td className="sticky left-0 z-20 bg-white/60 backdrop-blur px-3 py-2 min-w-[140px] sm:min-w-[180px] pr-2">
+  <div className="flex items-center gap-2">
+    <img
+      src={item.logo}
+      alt={item.project}
+      className="w-6 h-6 sm:w-8 sm:h-8 rounded-full object-cover"
+    />
+    <span className="text-[14px] sm:text-[18px] font-medium truncate max-w-[100px] sm:max-w-none">
+      {item.project}
+    </span>
+  </div>
+        </td>
+        <td className="px-3 py-2 whitespace-nowrap bg-white/60 backdrop-blur">{item.raised}</td>
+        <td className="px-3 py-2 whitespace-nowrap bg-white/60 backdrop-blur">{item.category}</td>
+        <td className="px-3 py-2 whitespace-nowrap bg-white/60 backdrop-blur">
+          <a
+            href={item.guide}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-900 hover:underline"
+          >
+            View 🡥
+          </a>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
           {filtered.length === 0 && (
             <p className="text-center text-gray-500 mt-4">
               No matching projects found.
@@ -124,7 +120,7 @@ export default function PublicTable() {
           )}
         </div>
       </div>
-      < Footer />
+      <Footer />
     </div>
-  )
+  );
 }
