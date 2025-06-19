@@ -1,4 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "tailwindcss";
+@import 'boxicons/css/boxicons.min.css';
 
 :root {
   --background: #ffffff;
@@ -8,8 +13,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +22,67 @@
   }
 }
 
+
+.image-card {
+    @apply size-12 md:size-14 lg:size-16 xl:size-18 rounded-sm p-2;
+  }
+
+.card-h1 {
+    @apply text-3xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+
+.card-p-small {
+    @apply text-xs md:text-sm lg:text-sm xl:text-xl;
+  }
+.card-p-big {
+    @apply text-sm md:text-xl;
+  }
+.card-list {
+    @apply text-sm md:text-xl;
+  }
+
+.card-btn {
+    @apply text-sm md:text-xl lg:text-xl xl:text-xl;
+  }
+
+.alpha-airdrop-h2 {
+    @apply text-gray-100 text-3xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes shadowPulse {
+  0%   { filter: drop-shadow(0 0 6px rgba(229, 228, 226, 0.3)); }
+  50%  { filter: drop-shadow(0 0 20px rgba(128, 128, 128, 0.6)); }
+  100% { filter: drop-shadow(0 0 6px rgba(229, 228, 226, 0.3)); }
+}
+
+.animate-shadow {
+  animation: shadowPulse 3s ease-in-out infinite;
 }
