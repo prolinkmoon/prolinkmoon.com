@@ -15,21 +15,21 @@ export default function Navbar() {
     { name: "Airdrops", href: "/airdrop" },
     { name: "Node & Validator", href: "/" },
     { name: "Faucet", href: "/faucet" },
-    { name: "Bridge", href: "/contact" },
+    { name: "Bridge", href: "/" },
   ];
 
   return (
     <div>
       <nav className="block w-full max-w-screen px-4 py-4 mx-auto sticky top-3 lg:px-8 z-[9999]">
         <div className="container flex flex-wrap items-center justify-between mx-auto text-gray-100">
-        <a href="/">
+        <Link href="/">
         <img
             src="/logo-2.png"
             width={42}
             height={42}
             alt="Prolinkmoon Logo"
         />
-        </a>
+        </Link>
 
           <div className="lg:hidden">
             <button
