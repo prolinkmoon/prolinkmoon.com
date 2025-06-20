@@ -86,3 +86,18 @@ body {
 .animate-shadow {
   animation: shadowPulse 3s ease-in-out infinite;
 }
+
+
+/* Icon Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
