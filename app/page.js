@@ -105,7 +105,7 @@ export default function Home() {
               </ul>
               <div className="flex">
               <Link href="/airdrop" className="card-btn items-center justify-center px-2.5 py-1.5 text-gray-100 font-mono rounded-sm border border-white/30 hover:border-white/50 bg-black">
-                Get Started
+                Start Exploring
               </Link>
 
               </div>

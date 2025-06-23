@@ -13,7 +13,7 @@ export async function POST(request) {
       path: '/',
       maxAge: 3600,
       sameSite: 'strict',
-      // secure: true, // aktifkan jika pakai HTTPS
+      secure: true, // aktifkan jika pakai HTTPS
     })
     return response
   }

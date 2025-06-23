@@ -20,7 +20,7 @@ export default function ValidatorHero() {
         </h1>
 
         <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
-          Operates independently, elivers institutional-grade validator infrastructure —
+          Operates independently, delivers institutional-grade validator infrastructure —
           secure, automated, and performance-optimized across testnet and mainnet networks.
         </p>
 

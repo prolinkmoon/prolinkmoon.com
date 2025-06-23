@@ -13,13 +13,13 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Airdrops", href: "/airdrop" },
-    { name: "Node & Validator", href: "/nodes" },
+    { name: "Node & Validator", href: "/node" },
     { name: "Faucet", href: "/faucet" },
-    { name: "Bridge", href: "/" },
+    { name: "Bridge", href: "/bridge" },
   ];
 
   return (
-    <div>
+    <div className="absolute top-0 w-full max-w-screen">
       <nav className="block w-full max-w-screen px-4 py-4 mx-auto sticky top-3 lg:px-8 z-[9999]">
         <div className="container flex flex-wrap items-center justify-between mx-auto text-gray-100">
         <Link href="/">
