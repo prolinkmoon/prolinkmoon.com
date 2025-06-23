@@ -1,7 +1,7 @@
 'use client';
-import Link from "next/link";
-import Footer from "@/app/Footer";
-import ImpactMetrics from "@/app/metrics";
+// import Link from "next/link";
+// import Footer from "@/app/Footer";
+// import ImpactMetrics from "@/app/metrics";
 import { MoveDown } from 'lucide-react';
 
 
@@ -15,7 +15,7 @@ export default function Hero() {
   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] sm:w-[60vw] max-w-[500px] pointer-events-none z-0">
     <div className="absolute inset-0 rounded-full blur-3xl opacity-30 animate-pulse bg-gradient-to-tr from-[#E5E4E2] via-gray-400 to-black" />
     <img
-      src="/prolinkmoon-big-logo.png"
+      src="prolinkmoon-big-logo.png"
       alt="Prolinkmoon Logo Glow"
       className="relative z-10 w-full object-contain opacity-30 brightness-75"
     />
