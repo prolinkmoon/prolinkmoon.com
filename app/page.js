@@ -1,10 +1,10 @@
 //import Image from "next/image";
 'use client';
-import Image from "next/image";
+import { ArrowRight, MoveUpRight } from 'lucide-react';
+import Hero from "./Hero";
 import Link from "next/link";
 import "./globals.css";
 import ImpactMetrics from "./metrics";
-import Cta from "./cta";
 import Footer from "./Footer";
 
 
@@ -12,31 +12,17 @@ export default function Home() {
 
   return (
     <>
-    <section id="Hero" className="absolute top-0 z-[-10] h-max w-screen bg-gradient-to-b from-neutral-950 via-zinc-700 to-neutral-900">
-      <div className="px-10 lg:p-12 max-w-7xl mx-auto pt-48 lg:mt-30">
-        <h1 className="text-[clamp(0.8rem,4vw,2rem)] w-max text-gray-900 font-extrabold bg-gradient-to-r from-blue-200 via-white to-yellow-200">PROLINKMOON IS</h1>
-        <h2 className="text-[clamp(2rem,10vw,8rem)] leading-none m-0 p-0 font-extrabold text-gray-100">WEB3<span className="font-light text-gray-400">Builder</span></h2>
-        <h2 className="text-[clamp(2rem,10vw,8rem)] leading-none m-0 p-0 font-extrabold text-gray-100">WEB3<span className="font-light text-gray-400">Contributor</span></h2>
-        <h2 className="text-[clamp(2rem,10vw,8rem)] leading-none m-0 p-0 font-extrabold text-gray-100">WEB3<span className="font-light text-gray-400">Researcher</span></h2>
-      </div>
-
-      <div className="relative w-60 h-60 mx-auto mt-1 group">
-      {/* Gradient Platinum to Gray to Black */}
-      <div className="absolute inset-0 rounded-full blur-2xl opacity-70 animate-gradient z-0 bg-gradient-to-tr from-[#E5E4E2] via-gray-400 to-black" />
-
-      {/* PNG Logo */}
-      <Image
-        src="/jadi.png"
-        alt="Prolinkmoon Logo"
-        layout="fill"
-        objectFit="contain"
-        className="pb-20 relative z-10 animate-shadow transition-transform duration-500 group-hover:scale-105"
-      />
-    </div>
-
-        <div className="relative w-screen h-max bg-neutral-900 text-gray-100">
+      < Hero />
+        <div id="prolinkmoon" className="relative w-full h-max bg-neutral-900 text-gray-100">
           <div className="max-w-7xl mx-auto py-18 px-3">
-          <h1 className="text-gray-100 text-2xl font-bold mb-7 max-w-5xl mx-auto">What I do?</h1>
+                  <div className="max-w-7xl mx-auto py-18 px-3 text-center">
+          <h1 className="text-gray-100 text-2xl font-bold mb-3 max-w-5xl mx-auto">
+            Building in Web3 — Infrastructure, Tools, and Early-Stage Insight
+          </h1>
+          <p className="text-gray-400 text-base font-light mb-10 max-w-3xl mx-auto">
+            From decentralized node operations to open-source tools and alpha-sharing — this is how I contribute to a more resilient and user-aligned web3 ecosystem.
+          </p>
+        </div>
             <div id="card-1" className="p-4 max-w-5xl mx-auto h-max rounded-xl border border-white/10 bg-gradient-to-bl from-neutral-900 via-zinc-800 to-neutral-900">
                     <img
                     src="/network.png"
@@ -52,8 +38,8 @@ export default function Home() {
               <li>Automation: monitoring, alerts, backups, and failover</li>
               <li>Hands-on experience with [Cosmos-based], [Polkadot-based], [Ethereum-based] Chain. </li>
               </ul>
-              <Link href="/" className="card-btn items-center justify-center px-2.5 py-1.5 text-gray-100 font-mono rounded-sm border border-white/30 hover:border-white/50 bg-black">
-                Get Started
+              <Link href="/node" className="inline-flex gap-1.5 card-btn items-center justify-center px-2.5 py-1.5 text-gray-100 font-mono rounded-sm border border-white/30 hover:border-white/50 bg-black">
+                Get Started < ArrowRight />
               </Link>
 
             </div>
@@ -66,21 +52,33 @@ export default function Home() {
                   />
               <h2 className="text-gray-100 card-h1 font-bold mt-5">Community Tools</h2>
               <p className="text-gray-100 card-p-small font-light">Practical tools that improve efficiency and experience.</p>
-              <p className="text-gray-400 font-normal card-p-big mt-3">I design and ship open-source tools tailored to the needs of node operators, airdrop participants, and web3 builder.</p>
+              <p className="text-gray-400 font-normal card-p-big mt-3">I craft practical tools that simplify complex workflows — built specifically for node operators, airdrop hunters, and builders who want to go from zero to contribution faster.</p>
               <ul className="list-disc card-list ml-5 mt-2.5 mb-6 text-gray-400">
-              <li>Prolinkmoon Playground - CLI installer tools for Cosmos-based chains</li>
-              <li>A simple and effective starter pack for becoming a node operator </li>
-              <li>Upcoming: lightweight Block Explorer (open-source)</li>
+              <li>Prolinkmoon Playground: CLI installer toolkit for Cosmos chains</li>
+              <li>Starter pack to launch your first node — no fluff, just action</li>
+              <li>Upcoming: lightweight, open-source block explorer</li>
               </ul>
               <div className="flex gap-1.5">
-              <a href="https://google.com" className="inline-flex items-center" rel="noopener noreferrer">
-                <button className="size-10 items-center px-1.5 py-1.5 cursor-pointer text-gray-100 rounded-sm border border-white/30 hover:border-white/50 bg-black"><i className="bx bxl-github text-2xl"></i></button>
-              </a>
-              <a href="https://google.com" className="inline-flex items-center" rel="noopener noreferrer">
-                <button className="items-center px-2 py-1.5 cursor-pointer text-gray-100 rounded-sm border border-white/30 hover:border-white/50 bg-black font-mono">Our Docs</button>
-              </a>                
-              </div>
+                <a
+                  href="https://github.com/prolinkmoon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-2 py-2 rounded-sm border border-white/30 bg-black text-gray-100 hover:border-white/50 transition-colors duration-200"
+                  aria-label="GitHub Repository"
+                >
+                  <i className="bx bxl-github text-2xl"></i>
+                </a>
 
+                <a
+                  href="https://docs.prolinkmoon.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex gap-1.5 items-center justify-center px-3 py-1.5 rounded-sm border border-white/30 bg-black text-gray-100 font-mono hover:border-white/50 transition-colors duration-200"
+                  aria-label="Documentation"
+                >
+                  Our Docs < MoveUpRight size={18} />
+                </a>
+              </div>
 
             </div>
           </div>
@@ -104,8 +102,8 @@ export default function Home() {
               
               </ul>
               <div className="flex">
-              <Link href="/airdrop" className="card-btn items-center justify-center px-2.5 py-1.5 text-gray-100 font-mono rounded-sm border border-white/30 hover:border-white/50 bg-black">
-                Start Exploring
+              <Link href="/airdrop" className="inline-flex gap-1.5 card-btn items-center justify-center px-2.5 py-1.5 text-gray-100 font-mono rounded-sm border border-white/30 hover:border-white/50 bg-black">
+                Start Exploring < ArrowRight />
               </Link>
 
               </div>
@@ -126,7 +124,6 @@ export default function Home() {
           </div>
           < Footer />
     </div>
-      </section>
       
       
     </>

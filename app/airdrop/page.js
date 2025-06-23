@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import 'boxicons/css/boxicons.min.css';
 import "../globals.css";
+import { ArrowRight, MoveUpRight } from 'lucide-react';
 import Cta from '../cta';
 import Footer from '../Footer';
 
@@ -37,8 +38,8 @@ export default function PublicTable() {
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a9a9a9_0%,#0c0c0c_50%,#a9a9a9_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#171717_0%,#737373_50%,#171717_100%)]" />
             <div className="inline-flex h-full w-full cursor-pointer justify-center rounded-full  px-3 py-1 text-xs font-medium leading-5  backdrop-blur-xl bg-black text-slate-200">
               Node & Validator ⚡️
-              <span className="inline-flex items-center pl-2 text-white">
-                by Prolinkmoon 🡢
+              <span className="inline-flex gap-1.5 items-center pl-2 text-white">
+                by Prolinkmoon <ArrowRight size={16}/>
               </span>
             </div>
           </span>
@@ -105,7 +106,7 @@ export default function PublicTable() {
             rel="noopener noreferrer"
             className="text-blue-900 hover:underline"
           >
-            View 🡥
+            View
           </a>
         </td>
       </tr>

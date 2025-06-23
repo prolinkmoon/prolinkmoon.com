@@ -8,7 +8,7 @@ const socials = [
   { name: 'Twitter', icon: Twitter, url: 'https://twitter.com/prolinkmoon' },
   { name: 'Telegram', icon: Send, url: 'https://t.me/prolinkmoonchannel' },
   { name: 'GitHub', icon: Github, url: 'https://github.com/prolinkmoon' },
-  { name: 'Docs', icon: BookOpenText, url: 'https://docs.prolinkmoon.xyz' },
+  //{ name: 'Docs', icon: BookOpenText, url: 'https://docs.prolinkmoon.com' },
 ];
 
 export default function Cta() {

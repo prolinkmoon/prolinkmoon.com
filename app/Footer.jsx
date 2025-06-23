@@ -19,11 +19,11 @@ export default function Footer() {
         <div>
           <h3 className="text-white text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2">
-            <li><Link href="/" className="hover:text-yellow-300 transition">Home</Link></li>
-            <li><Link href="/airdrop" className="hover:text-yellow-300 transition">Alpha Airdrops</Link></li>
-            <li><Link href="/contribute" className="hover:text-yellow-300 transition">Validator Node</Link></li>
-            <li><Link href="/tools" className="hover:text-yellow-300 transition">Faucet</Link></li>
-            <li><Link href="/tools" className="hover:text-yellow-300 transition">Brigde</Link></li>          
+            <li><Link href="/" className="hover:text-blue-200 transition">Home</Link></li>
+            <li><Link href="/airdrop" className="hover:text-blue-200 transition">Alpha Airdrops</Link></li>
+            <li><Link href="/node" className="hover:text-blue-200 transition">Validator Node</Link></li>
+            <li><Link href="/faucet" className="hover:text-blue-200 transition">Faucet</Link></li>
+            <li><Link href="/bridge" className="hover:text-blue-200 transition">Brigde</Link></li>          
           </ul>
         </div>
 
@@ -31,16 +31,16 @@ export default function Footer() {
         <div>
           <h3 className="text-white text-lg font-semibold mb-3">Follow Us</h3>
           <div className="flex items-center space-x-5">
-            <a href="https://twitter.com/prolinkmoon" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition">
+            <a href="https://twitter.com/prolinkmoon" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition">
               <Twitter className="w-6 h-6" />
             </a>
-            <a href="https://t.me/prolinkmoonchannel" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition">
+            <a href="https://t.me/prolinkmoonchannel" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition">
               <Send className="w-6 h-6" />
             </a>
-            <a href="https://github.com/prolinkmoon" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition">
+            <a href="https://github.com/prolinkmoon" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://docs.prolinkmoon.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-300 transition">
+            <a href="https://docs.prolinkmoon.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition">
               <BookOpenText className="w-6 h-6" />
             </a>
           </div>

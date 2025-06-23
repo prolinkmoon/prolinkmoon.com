@@ -74,7 +74,7 @@ export default function BridgeShowcase() {
           Your bridge activity builds your on-chain rep.
         </h1>
         <p className="mt-4 text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-          Some of them may reward it. Just saying.
+          Some of them may reward it. Just saying. 👀
         </p>
       </div>
 

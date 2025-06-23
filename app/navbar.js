@@ -99,7 +99,7 @@ export default function Navbar() {
                 </li>
               ))}
               <li className="mt-4">
-                <p>Follow us: </p>
+                <p className="text-gray-500">Follow us: </p>
                 <div className="flex">              
                 <a
             href="https://google.com"

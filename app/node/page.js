@@ -36,6 +36,10 @@ export default function ValidatorHero() {
           <a
             href="#networks"
             className="text-sm font-mono px-4 py-2 rounded border border-white/30 hover:border-white/60 transition bg-black text-white"
+                    onClick={(e) => {
+          e.preventDefault();
+          document.querySelector("#networks").scrollIntoView({ behavior: "smooth" });
+        }}
           >
             See Networks
           </a>
