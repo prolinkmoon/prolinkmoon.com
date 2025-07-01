@@ -22,7 +22,7 @@ const testnets = [
     logo: 'https://pbs.twimg.com/profile_images/1893746041926885376/L-4D2qr9_400x400.jpg',
     status: 'Running',
     description: 'Gensyn is a decentralized ML compute protocol, connecting idle GPUs globally into verifiable, incentive-driven training networks.',
-    guideLink: '',
+    guideLink: 'https://x.com/ProlinkMoon/status/1939854204434252080',
   },
   {
     name: 'Boundless',
