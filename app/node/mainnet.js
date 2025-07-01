@@ -26,7 +26,7 @@ const mainnets = [
     logo: '/networks/neutron.svg',
     status: 'Active',
     uptime: '99.8%',
-    stakeLink: 'https://google.com',
+    stakeLink: '#',
     servicesLink: '#',
   },
 ];

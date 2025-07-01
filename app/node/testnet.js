@@ -4,27 +4,42 @@ import { motion } from 'framer-motion';
 
 const testnets = [
   {
-    name: 'Xion Testnet',
-    logo: 'https://s3.coinmarketcap.com/static-gravity/image/89199b0d98a2491ca8c3baafbf07ae08.png',
-    status: 'Active',
-    description: 'The first modular chain for consumer apps powered by Cosmos stack.',
-    guideLink: '/guides/xion',
-  },
-  {
-    name: 'Avail Testnet',
-    logo: 'https://s2.coinmarketcap.com/static/img/coins/200x200/32376.png',
+    name: 'Nexus',
+    logo: 'https://img.cryptorank.io/coins/nexus1739951010707.png',
     status: 'Running',
-    description: 'Data availability layer for next-gen modular blockchains and rollups.',
-    guideLink: '/guides/avail',
+    description: 'Nexus is building a global, EVM‑compatible Layer‑1 powered by a massively parallel zkVM to scale verifiable computation.',
+    guideLink: 'https://x.com/ProlinkMoon/status/1937316068130971986',
   },
   {
-    name: 'Berachain Artio',
-    logo: 'https://cdn.prod.website-files.com/633c67ced5457aa4dec572be/67b845abe842d21521095c26_667ac3022260a22071b3cf37_u_b_f51944d0-b527-11ee-be26-a5e0a0cc15ce.png',
-    status: 'Online',
-    description: 'High-performance EVM chain with proof-of-liquidity consensus.',
-    guideLink: '/guides/berachain',
+    name: 'Aztec',
+    logo: 'https://img.cryptorank.io/coins/aztec1671431774571.png',
+    status: 'Running',
+    description: 'Aztec is a privacy-first Layer‑2 on Ethereum offering programmable, encrypted smart contracts via recursive zk‑ZK rollups and Noir.',
+    guideLink: '',
+  },
+  {
+    name: 'Gensyn',
+    logo: 'https://pbs.twimg.com/profile_images/1893746041926885376/L-4D2qr9_400x400.jpg',
+    status: 'Running',
+    description: 'Gensyn is a decentralized ML compute protocol, connecting idle GPUs globally into verifiable, incentive-driven training networks.',
+    guideLink: '',
+  },
+  {
+    name: 'Boundless',
+    logo: 'https://pbs.twimg.com/profile_images/1917644023327498240/4Nt6GIFd_400x400.jpg',
+    status: 'Running',
+    description: 'Boundless is a universal protocol providing verifiable, ZK-powered compute across blockchains with incentivized provers.',
+    guideLink: '',
+  },
+  {
+    name: 'Succinctlabs',
+    logo: 'https://avatars.githubusercontent.com/u/112135134?s=280&v=4',
+    status: 'Running',
+    description: 'Succinct builds a decentralized zkVM network enabling fast, cheap, and trustless proof generation for any chain.',
+    guideLink: '',
   },
 ];
+
 
 export default function IncentivizedTestnetSection() {
   return (
@@ -59,6 +74,7 @@ export default function IncentivizedTestnetSection() {
             <p className="text-gray-400 text-sm mt-2">{net.description}</p>
             <a
               href={net.guideLink}
+              target="_blank"
               className="inline-block mt-4 text-sm font-mono px-4 py-2 rounded border border-white/20 hover:border-white/40 transition bg-black text-white"
             >
               Guide ↗

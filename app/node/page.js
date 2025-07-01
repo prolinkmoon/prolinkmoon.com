@@ -25,7 +25,7 @@ export default function ValidatorHero() {
         </p>
 
         <a
-          href="#networks"
+          href="https://docs.prolinkmoon.com/prolinkmoon-infrastructure"
           className="mt-2 inline-block text-sm font-mono text-gray-400 hover:text-gray-200 transition"
         >
           Explore our infrastructure ↗
@@ -44,7 +44,7 @@ export default function ValidatorHero() {
             See Networks
           </a>
           <a
-            href="/tools"
+            href="#"
             className="text-sm font-mono px-4 py-2 rounded border border-white/30 hover:border-white/60 transition bg-black text-white"
           >
             Pro Tools
