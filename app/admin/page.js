@@ -1284,9 +1284,28 @@ export default function AdminPage() {
   }
 
   useEffect(() => {
-    load();
-  }, []);
+  async function checkAuth() {
+    const res = await fetch("/api/admin/airdrops");
 
+    if (res.status === 401) {
+      router.replace("/admin/login");
+      return;
+    }
+
+    const data = await res.json();
+
+    if (!Array.isArray(data)) {
+      setRows([]);
+      return;
+    }
+
+    setRows(data);
+  }
+
+  checkAuth();
+}, []);
+
+    
   /* ================= SAVE ADD / EDIT ================= */
   async function save() {
     await fetch("/api/admin/airdrops", {

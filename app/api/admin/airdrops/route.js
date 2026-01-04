@@ -452,20 +452,160 @@
 
 
 
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
+// import { db } from "../../../../lib/db";
+// import { cookies } from "next/headers";
+// // import db from "@/lib/db";
+
+// // 🔐 simple cookie auth
+// async function isAuthed() {
+//   const cookieStore = await cookies();
+//   const token = cookieStore.get("admin_token");
+//   return token?.value === process.env.ADMIN_SECRET;
+// }
+
+// // ================== GET ==================
+// export async function GET() {
+//   const [rows] = await db.query(`
+//     SELECT *
+//     FROM airdrops
+//     ORDER BY order_index ASC, id DESC
+//   `);
+
+//   return Response.json(rows);
+// }
+
+
+// // ================== POST (ADD) ==================
+// export async function POST(req) {
+//   if (!(await isAuthed())) {
+//     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+//   }
+
+//   const body = await req.json();
+
+//   const {
+//     project_name = "",
+//     image_url = "",
+//     rating = 1,
+//     stage = "new",
+//     campaign_url = "",
+//     tags = [],
+//   } = body;
+
+//   await db.query(
+//     `INSERT INTO airdrops
+//      (project_name, image_url, rating, stage, campaign_url, tags)
+//      VALUES (?, ?, ?, ?, ?, ?)`,
+//     [
+//       project_name,
+//       image_url,
+//       rating,
+//       stage,
+//       campaign_url,
+//       JSON.stringify(tags), // ✅ ALWAYS JSON
+//     ]
+//   );
+
+//   return NextResponse.json({ success: true });
+// }
+
+
+
+// // ================== PUT (EDIT / REORDER) ==================
+// export async function PUT(req) {
+//   if (!(await isAuthed())) {
+//     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+//   }
+
+//   const body = await req.json();
+
+//   // ================= REORDER MODE =================
+//   if (Array.isArray(body.items)) {
+//     for (const item of body.items) {
+//       await db.query(
+//         "UPDATE airdrops SET order_index=? WHERE id=?",
+//         [item.order_index, item.id]
+//       );
+//     }
+
+//     return NextResponse.json({ success: true, mode: "reorder" });
+//   }
+
+//   // ================= EDIT MODE =================
+//   const {
+//     id,
+//     project_name,
+//     image_url,
+//     rating,
+//     stage,
+//     campaign_url,
+//     tags,
+//   } = body;
+
+//   if (!id) {
+//     return NextResponse.json(
+//       { error: "Missing ID" },
+//       { status: 400 }
+//     );
+//   }
+
+//   const [res] = await db.query(
+//     `
+//     UPDATE airdrops SET
+//       project_name = ?,
+//       image_url = ?,
+//       rating = ?,
+//       stage = ?,
+//       campaign_url = ?,
+//       tags = ?
+//     WHERE id = ?
+//     `,
+//     [
+//       project_name,
+//       image_url,
+//       rating,
+//       stage,
+//       campaign_url,
+//       JSON.stringify(tags ?? []),
+//       id,
+//     ]
+//   );
+
+//   return NextResponse.json({
+//     success: true,
+//     mode: "edit",
+//     affectedRows: res.affectedRows,
+//   });
+// }
+
+
+
+// // ================== DELETE ==================
+// export async function DELETE(req) {
+//   if (!(await isAuthed())) {
+//     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+//   }
+
+//   const { id } = await req.json();
+//   await db.query("DELETE FROM airdrops WHERE id=?", [id]);
+
+//   return NextResponse.json({ success: true });
+// }
+
+
+
+
+// import { db } from "@/lib/db";
 import { db } from "../../../../lib/db";
-import { cookies } from "next/headers";
-// import db from "@/lib/db";
+import { requireAdmin } from "../../../../lib/admin-auth";
 
-// 🔐 simple cookie auth
-async function isAuthed() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("admin_token");
-  return token?.value === process.env.ADMIN_SECRET;
-}
-
-// ================== GET ==================
+// ================= GET =================
 export async function GET() {
+  const auth = await requireAdmin();
+if (auth) return auth;
+
+
   const [rows] = await db.query(`
     SELECT *
     FROM airdrops
@@ -476,11 +616,11 @@ export async function GET() {
 }
 
 
-// ================== POST (ADD) ==================
+// ================= POST (ADD) =================
 export async function POST(req) {
-  if (!(await isAuthed())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const auth = await requireAdmin();
+if (auth) return auth;
+
 
   const body = await req.json();
 
@@ -494,7 +634,7 @@ export async function POST(req) {
   } = body;
 
   await db.query(
-    `INSERT INTO airdrops 
+    `INSERT INTO airdrops
      (project_name, image_url, rating, stage, campaign_url, tags)
      VALUES (?, ?, ?, ?, ?, ?)`,
     [
@@ -503,24 +643,57 @@ export async function POST(req) {
       rating,
       stage,
       campaign_url,
-      JSON.stringify(tags), // ✅ ALWAYS JSON
+      JSON.stringify(tags),
     ]
   );
 
-  return NextResponse.json({ success: true });
+  return Response.json({ success: true });
 }
 
-
-
-// ================== PUT (EDIT / REORDER) ==================
+// ================= PUT (EDIT DATA) =================
 export async function PUT(req) {
-  if (!(await isAuthed())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const auth = await requireAdmin();
+if (auth) return auth;
+
 
   const body = await req.json();
 
-  // ================= REORDER MODE =================
+  // EDIT DATA (bukan reorder)
+  if (body.id) {
+    const {
+      id,
+      project_name,
+      image_url,
+      rating,
+      stage,
+      campaign_url,
+      tags,
+    } = body;
+
+    await db.query(
+      `UPDATE airdrops
+       SET project_name=?,
+           image_url=?,
+           rating=?,
+           stage=?,
+           campaign_url=?,
+           tags=?
+       WHERE id=?`,
+      [
+        project_name,
+        image_url,
+        rating,
+        stage,
+        campaign_url,
+        JSON.stringify(tags),
+        id,
+      ]
+    );
+
+    return Response.json({ success: true });
+  }
+
+  // REORDER
   if (Array.isArray(body.items)) {
     for (const item of body.items) {
       await db.query(
@@ -529,66 +702,20 @@ export async function PUT(req) {
       );
     }
 
-    return NextResponse.json({ success: true, mode: "reorder" });
+    return Response.json({ success: true });
   }
 
-  // ================= EDIT MODE =================
-  const {
-    id,
-    project_name,
-    image_url,
-    rating,
-    stage,
-    campaign_url,
-    tags,
-  } = body;
-
-  if (!id) {
-    return NextResponse.json(
-      { error: "Missing ID" },
-      { status: 400 }
-    );
-  }
-
-  const [res] = await db.query(
-    `
-    UPDATE airdrops SET
-      project_name = ?,
-      image_url = ?,
-      rating = ?,
-      stage = ?,
-      campaign_url = ?,
-      tags = ?
-    WHERE id = ?
-    `,
-    [
-      project_name,
-      image_url,
-      rating,
-      stage,
-      campaign_url,
-      JSON.stringify(tags ?? []),
-      id,
-    ]
-  );
-
-  return NextResponse.json({
-    success: true,
-    mode: "edit",
-    affectedRows: res.affectedRows,
-  });
+  return Response.json({ error: "Invalid payload" }, { status: 400 });
 }
 
-
-
-// ================== DELETE ==================
+// ================= DELETE =================
 export async function DELETE(req) {
-  if (!(await isAuthed())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const auth = await requireAdmin();
+if (auth) return auth;
+
 
   const { id } = await req.json();
   await db.query("DELETE FROM airdrops WHERE id=?", [id]);
 
-  return NextResponse.json({ success: true });
+  return Response.json({ success: true });
 }
