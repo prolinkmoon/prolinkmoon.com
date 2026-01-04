@@ -553,8 +553,8 @@ export default function PublicTable() {
       {/* HERO */}
       <div className="p-6 sm:p-12 max-w-6xl mx-auto text-center mt-24">
         <a
-          href="https://github.com/ibelick/background-snippets"
-          target="_blank"
+          href="/node"
+          // target="_blank"
           rel="noopener noreferrer"
           className="inline-flex pb-4"
         >
